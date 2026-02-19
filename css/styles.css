@@ -1,61 +1,49 @@
-/* Basic site styles added for session pages */
-:root{
-  /* default color variables (can be overridden by theme classes) */
-  --accent: #ff99cc;
-  --bg: #fffafc;
-  --text: #222;
-  --muted: #666;
-  --heading-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --body-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --h1-size: 2rem;
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffe6f0;
+    color: #4a0033;
+    margin: 0;
+    padding: 20px;
 }
-html,body{height:100%;}
-body{
-  margin:0;
-  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  padding:2rem;
-  line-height:1.45;
+
+h1 {
+    color: #ff1493;
+    text-align: center;
 }
-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
-h1{margin:0;color:#d6336c}
-img{max-width:100%;height:auto;display:block}
-.container{max-width:900px;margin:0 auto}
-ul{margin-left:1.2rem}
-a{color:#c2185b}
 
-/* Additional layout and utility styles */
-.container{max-width:900px;margin:0 auto;padding:0 1rem}
-main{margin-top:1rem}
-h1{font-size:2rem;line-height:1.1}
-.badge{width:56px;height:56px;border-radius:50%;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
-nav a{color:#c2185b;text-decoration:none;margin:0 0.5rem}
-section{margin-top:1.25rem}
-audio{margin-top:0.5rem;display:block}
-.youtube-player{border-radius:8px;overflow:hidden}
+h2 {
+    color: #c71585;
+    margin-top: 40px;
+}
 
-/* Theme variants */
-.theme-pastel{--accent:#ff99cc;--bg:#fffafc;--text:#222;}
-.theme-dark{--accent:#6ee7b7;--bg:#0f172a;--text:#e6eef6;--muted:#9aa7bf}
-.theme-modern{--accent:#0ea5e9;--bg:#ffffff;--text:#0b1220;--muted:#6b7280}
+p {
+    line-height: 1.6;
+}
 
-/* Font stacks */
-.font-sans{--heading-font:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--body-font:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
-.font-serif{--heading-font: Georgia, 'Times New Roman', Times, serif;--body-font: Georgia, 'Times New Roman', Times, serif}
-.font-display{--heading-font: 'Trebuchet MS', 'Lucida Grande', 'Segoe UI', sans-serif;--body-font: system-ui, -apple-system, 'Segoe UI', Roboto}
+a {
+    color: #ff1493;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-/* Sizes */
-.size-sm{--h1-size:1.5rem}
-.size-md{--h1-size:2rem}
-.size-lg{--h1-size:2.8rem}
+a:hover {
+    text-decoration: underline;
+}
 
-/* Apply variables */
-body{font-family:var(--body-font)}
-h1{font-family:var(--heading-font);font-size:var(--h1-size);color:var(--accent)}
-p,li,small{color:var(--text)}
-small{color:var(--muted)}
+img {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+}
 
-/* Controls */
-.controls{display:flex;gap:0.5rem;align-items:center;margin-top:0.75rem}
-.controls select{padding:0.35rem;border-radius:6px;border:1px solid #ddd}
+ul {
+    background-color: #ffcce6;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
