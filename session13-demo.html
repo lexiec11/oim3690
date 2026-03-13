@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    .info-box {
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    #loginForm {
+      display: block;
+    }
+    #successPage {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login Form</h1>
+    
+    <div id="loginForm">
+      <div class="info-box">
+        <h3>Client Info:</h3>
+        <p><strong>User Agent:</strong> <script>document.write(navigator.userAgent)</script></p>
+        <p><strong>Platform:</strong> <script>document.write(navigator.platform)</script></p>
+        <p><strong>Language:</strong> <script>document.write(navigator.language)</script></p>
+      </div>
+
+      <div class="info-box">
+        <h3>GET vs POST:</h3>
+        <p><strong>GET:</strong> Data visible in URL, less secure, cached</p>
+        <p><strong>POST:</strong> Data hidden in body, more secure, not cached</p>
+        <p><strong>Current Form Method:</strong> POST</p>
+      </div>
+      
+      <form id="myForm" action="https://www.example.com/login" method="POST">
+        <label for="username">Username: </label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your username"
+          name="username"
+          required
+        />
+        <br><br>
+        
+        <label for="password">Password: </label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          name="password"
+          required
+        />
+        <br><br>
+        
+        <label for="role">Role: </label>
+        <select id="role" name="role" required>
+          <option value="">Select a role</option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+          <option value="moderator">Moderator</option>
+        </select>
+        <br><br>
+        
+        <label for="accounttype">Account Type: </label>
+        <select id="accounttype" name="accounttype" required>
+          <option value="">Select account type</option>
+          <option value="free">Free</option>
+          <option value="premium">Premium</option>
+          <option value="enterprise">Enterprise</option>
+        </select>
+        <br><br>
+        
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="info-box" style="margin-top: 20px;">
+        <h3>Echo Test:</h3>
+        <p id="echo-output">Form data will appear here after submission</p>
+      </div>
+    </div>
+
+    <div id="successPage">
+      <h2>Login Successful!</h2>
+      <div class="info-box">
+        <h3>Your Login Details:</h3>
+        <p><strong>Username:</strong> <span id="displayUsername"></span></p>
+        <p><strong>Role:</strong> <span id="displayRole"></span></p>
+        <p><strong>Account Type:</strong> <span id="displayAccountType"></span></p>
+      </div>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const role = document.getElementById('role').value;
+      const accounttype = document.getElementById('accounttype').value;
+      
+      // Show echo
+      document.getElementById('echo-output').innerHTML = 
+        `<strong>Echoed Data:</strong><br>Username: ${username}<br>Role: ${role}<br>Account Type: ${accounttype}`;
+      
+      // Hide login form and show success page
+      setTimeout(function() {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('successPage').style.display = 'block';
+        document.getElementById('displayUsername').textContent = username;
+        document.getElementById('displayRole').textContent = role;
+        document.getElementById('displayAccountType').textContent = accounttype;
+      }, 1000);
+    });
+
+    function logout() {
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('successPage').style.display = 'none';
+      document.getElementById('myForm').reset();
+      document.getElementById('echo-output').textContent = 'Form data will appear here after submission';
+    }
+  </script>
+</body>
+</html>
