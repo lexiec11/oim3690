@@ -1,0 +1,98 @@
+body{
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #ffc2d1);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+/* CENTERED CARD */
+.container{
+    background: #fff0f6;
+    padding:30px;
+    border-radius:25px;
+    width:360px;
+    box-shadow:0 15px 40px rgba(255, 105, 180, 0.25);
+    border:1px solid #ffd6e8;
+}
+
+/* TITLE */
+h1{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:5px;
+    color:#d63384;
+}
+
+/* DATE */
+.date{
+    text-align:center;
+    font-size:13px;
+    color:#a61e4d;
+    margin-bottom:20px;
+}
+
+/* INPUT ROW */
+.input-row{
+    display:flex;
+    gap:10px;
+}
+
+/* INPUT */
+input{
+    flex:1;
+    padding:10px;
+    border-radius:12px;
+    border:none;
+    background:#ffe3ec;
+    outline:none;
+}
+
+/* BUTTON */
+button{
+    padding:10px 15px;
+    border-radius:12px;
+    border:none;
+    background:#ff4d8d;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.2s;
+}
+
+button:hover{
+    background:#e03174;
+    transform:scale(1.05);
+}
+
+/* TASK LIST */
+ul{
+    list-style:none;
+    padding:0;
+    margin-top:20px;
+}
+
+/* TASK ITEM */
+li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px;
+    margin-bottom:10px;
+    border-radius:12px;
+    background:#ffe3ec;
+    transition:0.2s;
+}
+
+li:hover{
+    background:#ffd6e8;
+}
+
+/* DELETE BUTTON */
+.delete{
+    color:#c9184a;
+    cursor:pointer;
+    font-weight:bold;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lexie Playground</title>
+  <meta name="description" content="Session 14 playground page for OIM3690" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f4ef;
+      color: #222;
+      line-height: 1.5;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px 40px;
+    }
+
+    section {
+      background: white;
+      margin-bottom: 24px;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    iframe, video {
+      width: 100%;
+      max-width: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    details {
+      background: #f3efe8;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    canvas {
+      display: block;
+      margin: 10px auto 0;
+      background: #fff8f8;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+
+    @media (max-width: 700px) {
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 28px 16px;
+      }
+
+      section {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lexie’s Playground</h1>
+    <p>Session 14 practice page</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>YouTube Video</h2>
+      <iframe
+        height="315"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="YouTube video player"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <section>
+      <h2>Google Map</h2>
+      <iframe
+        height="350"
+        src="https://www.google.com/maps?q=Babson+College&output=embed"
+        title="Babson College Map">
+      </iframe>
+    </section>
+
+    <section>
+      <h2>Audio and Video</h2>
+      <div class="media-grid">
+        <div>
+          <h3>Audio</h3>
+          <audio controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+          </audio>
+        </div>
+
+        <div>
+          <h3>Video</h3>
+          <video controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>What is this page?</summary>
+        <p>This is my Session 14 playground page for OIM3690.</p>
+      </details>
+
+      <details>
+        <summary>What did I practice?</summary>
+        <p>I practiced embeds, media, details/summary, canvas, and favicon.</p>
+      </details>
+
+      <details>
+        <summary>Is it responsive?</summary>
+        <p>Yes, the layout changes on smaller screens.</p>
+      </details>
+    </section>
+
+    <section>
+      <h2>Canvas Drawing</h2>
+      <canvas id="myCanvas" width="500" height="220"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made by Lexie</p>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "#ffd6e7";
+    ctx.fillRect(40, 40, 120, 80);
+
+    ctx.beginPath();
+    ctx.arc(250, 100, 45, 0, Math.PI * 2);
+    ctx.fillStyle = "#cdb4db";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(360, 160);
+    ctx.lineTo(420, 60);
+    ctx.lineTo(480, 160);
+    ctx.closePath();
+    ctx.fillStyle = "#bde0fe";
+    ctx.fill();
+
+    ctx.font = "24px Arial";
+    ctx.fillStyle = "#333";
+    ctx.fillText("Hello OIM3690!", 150, 205);
+  </script>
+</body>
+</html>
