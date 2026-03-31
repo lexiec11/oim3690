@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Page</title>
+</head>
+<body>
+    <input id="name" type="text" placeholder="Enter your name">
+    <button id="greetBtn">Greet</button>
+    <p id="greeting"></p>
+
+    <script>
+        document.getElementById('greetBtn').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const greetingElement = document.getElementById('greeting');
+            if (name.trim() === '') {
+                greetingElement.textContent = 'Please enter your name!';
+            } else {
+                greetingElement.textContent = 'Hello, ' + name + '!';
+            }
+        });
+    </script>
+</body>
+
+18
