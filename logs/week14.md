@@ -28,3 +28,7 @@
 - Fixed layout and styling issues  
 - Made sure my GitHub Pages site was fully working and live  
 - Did final edits to improve design and user experience  
+
+
+
+
